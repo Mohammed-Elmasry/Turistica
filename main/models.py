@@ -25,5 +25,7 @@ class City(models.Model):
     city_name = models.CharField(blank=True)
 
 
-
+class Transportation(models.Model):
+    trans_id = models.IntegerField(primary_key=True,auto_created=True)
+    trans_type = [('Public Transportation','public'),('Private Transportation','private')]
 
