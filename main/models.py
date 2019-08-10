@@ -20,6 +20,10 @@ class Category(models.Model):
     category_name = models.CharField(blank=True)
 
 
+class City(models.Model):
+    city_id = models.IntegerField(primary_key=True,auto_created=True)
+    city_name = models.CharField(blank=True)
+
 
 
 
