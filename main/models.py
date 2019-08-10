@@ -15,7 +15,9 @@ class Trip(models.Model):
     creation_date = models.DateTimeField(auto_now= True)
 
 
-
+class Category(models.Model):
+    category_id = models.IntegerField(primary_key=True,auto_created=True)
+    category_name = models.CharField(blank=True)
 
 
 
