@@ -26,6 +26,15 @@ class Site(models.Model):
     open_to = models.DateTimeField()
     site_cost = models.DecimalField(max_digits=4 ,decimal_places=2)
 
+class Tourist(models.Model):
+    tourist_id = models.IntegerField(primary_key=True ,auto_created=True)
+    tourist_first_name = models.CharField(max_length=32,blank=True)
+    tourist_last_name = models.CharField(max_length=32 , blank=True)
+    date_of_birth = models.DateField()
+    email = models.EmailField(blank=True)
+    password = models.CharField(max_length=50)
+    date_of_join = models.DateField(auto_now=True)
+    wallet = models.DecimalField(max_length=6)
 
 class City(models.Model):
     city_id = models.IntegerField(primary_key=True,auto_created=True)
