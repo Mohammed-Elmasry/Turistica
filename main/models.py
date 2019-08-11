@@ -58,3 +58,10 @@ class Guide(models.Model):
     national_id = models.CharField(max_length=13)
     licence_id = models.CharField()#we need to know the max_length of licence_id
 
+class Language(models.Model):
+    language_id = models.IntegerField(primary_key=True,auto_created=True)
+    language_name = [('English','English'),('Arabic','Arabic'),
+                     ('German','German'),('Italian','Italian'),
+                     ('Russian','Russian'),('Turkish','Turkish'),
+                     ('Swedish','Swedish'),('Greek','Greek'),
+                     ('French','French')]
