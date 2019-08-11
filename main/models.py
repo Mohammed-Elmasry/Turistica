@@ -17,7 +17,14 @@ class Trip(models.Model):
 
 class Category(models.Model):
     category_id = models.IntegerField(primary_key=True,auto_created=True)
-    category_name = models.CharField(blank=True)
+    category_name = models.CharField(blank=True,max_length=32)
+
+class Site(models.Model):
+    site_id = models.IntegerField(primary_key=True ,auto_created=True)
+    site_name = models.CharField(blank=True ,max_length=32)
+    open_from = models.DateTimeField()
+    open_to = models.DateTimeField()
+    site_cost = models.DecimalField(max_digits=4 ,decimal_places=2)
 
 
 class City(models.Model):
