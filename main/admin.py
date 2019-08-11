@@ -1,3 +1,7 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+class CityAdmin(admin.ModelAdmin):
+    list_display = ('city_name')
+    search_fields = ('city_name')
+admin.site.register(models.City,CityAdmin)
