@@ -5,12 +5,12 @@ class Category(models.Model):
     category_name = models.CharField(blank=True, max_length=32)
 
 class City(models.Model):
-    city_id = models.IntegerField(primary_key=True, auto_created=True)
+    city_id = models.AutoField(primary_key=True)
     city_name = models.CharField(max_length=32,blank=True)
 
 class Site(models.Model):
     city = models.ForeignKey(City,on_delete=models.CASCADE)
-    site_id = models.IntegerField(primary_key=True, auto_created=True)
+    site_id = models.AutoField(primary_key=True)
     site_name = models.CharField(blank=True, max_length=32)
     open_from = models.DateTimeField()
     open_to = models.DateTimeField()
@@ -18,7 +18,7 @@ class Site(models.Model):
 
 
 class Tourist(models.Model):
-    tourist_id = models.IntegerField(primary_key=True, auto_created=True)
+    tourist_id = models.AutoField(primary_key=True)
     tourist_first_name = models.CharField(max_length=32, blank=True, null=False)
     tourist_last_name = models.CharField(max_length=32, blank=True,null=False)
     date_of_birth = models.DateField(null=False)
@@ -29,12 +29,12 @@ class Tourist(models.Model):
 
 
 class Transportation(models.Model):
-    trans_id = models.IntegerField(primary_key=True, auto_created=True)
+    trans_id = models.AutoField(primary_key=True)
     trans_type = [('Public Transportation', 'public'), ('Private Transportation', 'private')]
 
 
 class Language(models.Model):
-    language_id = models.IntegerField(primary_key=True, auto_created=True)
+    language_id = models.AutoField(primary_key=True)
     language_name = [('English', 'English'), ('Arabic', 'Arabic'),
                      ('German', 'German'), ('Italian', 'Italian'),
                      ('Russian', 'Russian'), ('Turkish', 'Turkish'),
@@ -43,7 +43,7 @@ class Language(models.Model):
 
 class Guide(models.Model):
     language = models.ManyToManyField(Language,blank=True)
-    guide_id = models.IntegerField(primary_key=True, auto_created=True)
+    guide_id = models.AutoField(primary_key=True)
     guide_first_name = models.CharField(max_length=32, blank=True,null=False)
     guide_last_name = models.CharField(max_length=32, blank=True,null=False)
     email = models.EmailField(blank=True)
@@ -71,7 +71,7 @@ class Trip(models.Model):
     transportation = models.ForeignKey(Transportation ,on_delete=models.CASCADE)
     guide = models.ForeignKey(Guide,on_delete=models.CASCADE)
     site = models.ManyToManyField(Site,blank=True)
-    trip_id = models.IntegerField(auto_created=True, primary_key=True)
+    trip_id = models.AutoField( primary_key=True)
     trip_number = models.IntegerField()
     start_date = models.DateField()
     end_date = models.DateField()
