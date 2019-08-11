@@ -1,7 +1,7 @@
 from django.db import models
 
 class Category(models.Model):
-    category_id = models.IntegerField(primary_key=True, auto_created=True)
+    category_id = models.AutoField(primary_key=True)
     category_name = models.CharField(blank=True, max_length=32)
 
 class City(models.Model):
