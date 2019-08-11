@@ -12,8 +12,8 @@ class Site(models.Model):
     city = models.ForeignKey(City,on_delete=models.CASCADE)
     site_id = models.AutoField(primary_key=True)
     site_name = models.CharField(blank=True, max_length=32)
-    open_from = models.DateTimeField()
-    open_to = models.DateTimeField()
+    open_from = models.TimeField()
+    open_to = models.TextField()
     site_cost = models.DecimalField(max_digits=4, decimal_places=2)
 
 
