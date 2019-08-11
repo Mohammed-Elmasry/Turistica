@@ -17,4 +17,5 @@ class TouristAdmin(admin.ModelAdmin):
     list_display = ['tourist_first_name','email','date_of_join']
     search_fields = ['tourist_first_name','tourist_last_name','email']
     list_filter = ['tourist_first_name','tourist_last_name','email','date_of_join']
+    exclude = ['password']#it hide fields in admin form we will add all this fields in the future
 admin.site.register(models.Tourist,TouristAdmin)
