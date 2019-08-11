@@ -39,11 +39,12 @@ class GuideAdmin(admin.ModelAdmin):
 admin.site.register(models.Guide,GuideAdmin)
 
 class TripAdmin(admin.ModelAdmin):
-    list_display = ['trip_id','trip_number','start_date','end_date',
-                    'start_time','end_time','creation_date']
+    list_display = ['trip_number','start_date','end_date',
+                    'start_time','end_time','creation_date','status_is_active']
     list_filter = ['creation_date','category','city','transportation','guide','site']
     search_fields = ['trip_id','trip_number',
                      'creation_date','category','city','transportation','guide']
+    list_editable = ['status_is_active']
 admin.site.register(models.Trip,TripAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
