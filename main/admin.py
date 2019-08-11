@@ -45,3 +45,9 @@ class TripAdmin(admin.ModelAdmin):
     search_fields = ['trip_id','trip_number',
                      'creation_date','category','city','transportation','guide']
 admin.site.register(models.Trip,TripAdmin)
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['category_name']
+    search_fields = ['category_name']
+admin.site.register(models.Category,CategoryAdmin)
+
