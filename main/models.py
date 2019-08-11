@@ -14,7 +14,7 @@ class Site(models.Model):
     site_name = models.CharField(blank=True, max_length=32)
     open_from = models.TimeField()
     open_to = models.TimeField()
-    site_cost = models.DecimalField(max_digits=4, decimal_places=2)
+    site_cost = models.DecimalField(max_digits=6, decimal_places=2)
 
 
 class Tourist(models.Model):
